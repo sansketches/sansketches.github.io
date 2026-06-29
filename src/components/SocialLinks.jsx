@@ -42,7 +42,7 @@ export default function SocialLinks() {
 
       {/* YouTube */}
       <a
-        href="https://youtube.com"
+        href="https://www.youtube.com/watch?v=RdwfIFDuBUc"
         target="_blank"
         rel="noopener noreferrer"
         className="opacity-70 hover:opacity-100 transition-opacity cursor-none"

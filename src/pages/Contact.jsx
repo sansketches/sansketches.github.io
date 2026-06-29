@@ -127,7 +127,7 @@ export default function Contact() {
             <a href="https://www.behance.net/sanashk" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase opacity-30 hover:opacity-80 transition-opacity cursor-none">
               Behance
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase opacity-30 hover:opacity-80 transition-opacity cursor-none">
+            <a href="https://www.youtube.com/watch?v=RdwfIFDuBUc" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase opacity-30 hover:opacity-80 transition-opacity cursor-none">
               YouTube
             </a>
           </div>
