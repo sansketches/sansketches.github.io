@@ -6,7 +6,7 @@ import Lightbox from '@/components/Lightbox';
 const PROJECTS = [
   {
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg',
-    caption: 'Sky Market',
+    caption: 'Rug Shop',
     gallery: [
       { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg', caption: 'Rug Shop — Final Render' },
       { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3a20e993a_2.jpg', caption: 'Rug Shop — Presentation' },
