@@ -7,7 +7,11 @@ const PROJECTS = [
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/8793c6e3b_1.png',
     caption: 'Cyberpunk Alley',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/8793c6e3b_1.png', caption: 'Cyberpunk Alley' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/8793c6e3b_1.png', caption: 'Cyberpunk Alley — Final Render' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/9ff3db6b0_2.mp4', caption: 'Cyberpunk Alley — Blockout' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/6f9409493_3.png', caption: 'Cyberpunk Alley — Clay Render' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/9c27385d3_4.png', caption: 'Cyberpunk Alley — Textured' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/04c43795d_5.jpg', caption: 'Cyberpunk Alley — Presentation' },
     ],
   },
   {
