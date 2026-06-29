@@ -69,7 +69,7 @@ export default function Demoreel() {
               src={VIDEO_SRC}
 
               controls
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               onEnded={() => setPlaying(false)}
             />
           )}
