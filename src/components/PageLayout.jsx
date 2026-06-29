@@ -10,7 +10,7 @@ export default function PageLayout({ children }) {
         className="fixed inset-0 z-0"
         style={{
           backgroundImage: `url(${DEFAULT_BG})`,
-          backgroundSize: 'cover',
+          backgroundSize: '100% 100%',
           backgroundPosition: 'center',
         }}
       />
