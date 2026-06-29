@@ -34,21 +34,21 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 grid items-end py-7"
       style={{
-        background: 'rgba(30,30,30,0.82)',
+        background: 'rgba(5,5,5,0.72)',
         gridTemplateColumns: '1fr auto 1fr',
         fontSize: '13px',
         letterSpacing: '0.3em',
       }}
     >
       {/* Left nav group */}
-      <div className="flex items-center justify-evenly px-8">
+      <div className="flex items-end justify-evenly px-8 pb-3">
         {/* Portfolio dropdown */}
         <div
           className="relative"
           onMouseEnter={handlePortfolioEnter}
           onMouseLeave={handlePortfolioLeave}
         >
-          <button className="opacity-60 hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none">
+          <button className="text-white hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none" style={{ opacity: 0.92 }}>
             PORTFOLIO
           </button>
           {portfolioOpen && (
@@ -65,7 +65,7 @@ export default function Navbar() {
           onMouseEnter={handleDemoEnter}
           onMouseLeave={handleDemoLeave}
         >
-          <button className="opacity-60 hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none">
+          <button className="text-white hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none" style={{ opacity: 0.92 }}>
             DEMOREEL
           </button>
           {demoOpen && (
@@ -77,14 +77,14 @@ export default function Navbar() {
       </div>
 
       {/* Center logo */}
-      <Link to="/" className="opacity-90 hover:opacity-100 transition-opacity cursor-none flex justify-center">
+      <Link to="/" className="opacity-90 hover:opacity-100 transition-opacity cursor-none flex justify-center items-end pb-1">
         <img src={LOGO_IMG} alt="Logo" className="h-14 w-auto" />
       </Link>
 
       {/* Right nav group */}
-      <div className="flex items-center justify-evenly px-8">
-        <Link to="/about" className={navLinkClass('/about')}>About</Link>
-        <Link to="/contact" className={navLinkClass('/contact')}>Contact</Link>
+      <div className="flex items-end justify-evenly px-8 pb-3">
+        <Link to="/about" className={`text-white transition-all duration-200 hover:tracking-widest hover:opacity-100 ${location.pathname === '/about' ? 'opacity-100' : ''}`} style={{ opacity: location.pathname === '/about' ? 1 : 0.92 }}>About</Link>
+        <Link to="/contact" className={`text-white transition-all duration-200 hover:tracking-widest hover:opacity-100 ${location.pathname === '/contact' ? 'opacity-100' : ''}`} style={{ opacity: location.pathname === '/contact' ? 1 : 0.92 }}>Contact</Link>
       </div>
     </nav>
   );
