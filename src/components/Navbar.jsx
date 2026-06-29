@@ -49,7 +49,7 @@ export default function Navbar() {
           onMouseLeave={handlePortfolioLeave}
         >
           <button className="opacity-60 hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none">
-            Portfolio
+            PORTFOLIO
           </button>
           {portfolioOpen && (
             <div className="nav-dropdown">
@@ -66,7 +66,7 @@ export default function Navbar() {
           onMouseLeave={handleDemoLeave}
         >
           <button className="opacity-60 hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none">
-            Demoreel
+            DEMOREEL
           </button>
           {demoOpen && (
             <div className="nav-dropdown">
