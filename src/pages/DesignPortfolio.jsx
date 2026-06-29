@@ -63,7 +63,7 @@ export default function DesignPortfolio() {
         <p style={{ fontFamily: 'Montserrat', fontSize: '11px', letterSpacing: '0.3em', opacity: 0.5 }} className="uppercase mb-3">
           Portfolio
         </p>
-        <h1 style={{ fontFamily: 'Cormorant Garamond', fontSize: '3rem', fontWeight: 300, letterSpacing: '-0.02em' }}>
+        <h1 style={{ fontFamily: 'Montserrat', fontSize: '2rem', fontWeight: 300, letterSpacing: '0.25em' }} className="uppercase">
           Design Portfolio
         </h1>
         <div className="mt-4 w-12 h-px" style={{ background: 'rgba(140, 94, 94, 0.6)' }} />

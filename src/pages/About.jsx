@@ -10,8 +10,8 @@ export default function About() {
           <p className="text-xs tracking-widest uppercase opacity-30 mb-8">About</p>
 
           <h1
-            className="text-6xl font-light mb-12 text-white"
-            style={{ fontFamily: 'Cormorant Garamond, serif', letterSpacing: '0.05em' }}
+            className="uppercase mb-12 text-white"
+            style={{ fontFamily: 'Montserrat', fontSize: '2rem', fontWeight: 300, letterSpacing: '0.25em' }}
           >
             Sana Shaikh
           </h1>

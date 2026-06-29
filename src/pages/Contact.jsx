@@ -22,8 +22,8 @@ export default function Contact() {
         <div className="w-full max-w-xl">
           <p className="text-xs tracking-widest uppercase opacity-30 mb-8 text-center">Contact</p>
           <h1
-            className="text-5xl font-light mb-16 text-center"
-            style={{ fontFamily: 'Cormorant Garamond, serif', letterSpacing: '0.05em' }}
+            className="uppercase mb-16 text-center"
+            style={{ fontFamily: 'Montserrat', fontSize: '2rem', fontWeight: 300, letterSpacing: '0.25em' }}
           >
             Get in Touch
           </h1>

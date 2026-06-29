@@ -46,7 +46,7 @@ export default function InteriorDesign() {
     <PageLayout bgImage={BG_IMAGE}>
       <div className="mb-16 text-center">
         <p className="text-xs tracking-widest uppercase opacity-40 mb-3">Design Portfolio</p>
-        <h1 className="text-5xl font-light" style={{ fontFamily: 'Cormorant Garamond, serif', letterSpacing: '0.05em' }}>
+        <h1 className="uppercase" style={{ fontFamily: 'Montserrat', fontSize: '2rem', fontWeight: 300, letterSpacing: '0.25em' }}>
           Interior Design
         </h1>
         <div className="w-12 h-px bg-white opacity-20 mx-auto mt-6" />
