@@ -118,7 +118,7 @@ export default function Contact() {
 
           {/* Social links under form */}
           <div className="mt-16 flex justify-center gap-8">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase opacity-30 hover:opacity-80 transition-opacity cursor-none">
+            <a href="https://www.linkedin.com/in/sana-shaikh-designand3dart/" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase opacity-30 hover:opacity-80 transition-opacity cursor-none">
               LinkedIn
             </a>
             <a href="https://artstation.com" target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase opacity-30 hover:opacity-80 transition-opacity cursor-none">

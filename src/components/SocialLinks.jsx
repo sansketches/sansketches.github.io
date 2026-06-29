@@ -3,7 +3,7 @@ export default function SocialLinks() {
     <div className="fixed bottom-6 left-8 z-40 flex items-center gap-4">
       {/* LinkedIn */}
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/in/sana-shaikh-designand3dart/"
         target="_blank"
         rel="noopener noreferrer"
         className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
