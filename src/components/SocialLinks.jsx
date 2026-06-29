@@ -29,7 +29,7 @@ export default function SocialLinks() {
 
       {/* Behance */}
       <a
-        href="https://behance.net"
+        href="https://www.behance.net/sanashk"
         target="_blank"
         rel="noopener noreferrer"
         className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
