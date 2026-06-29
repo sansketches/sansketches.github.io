@@ -1,56 +1,47 @@
+import { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
-import PortfolioGrid from '@/components/PortfolioGrid';
+import Lightbox from '@/components/Lightbox';
 
-const BG_IMAGE = 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=80';
-
-const ITEMS = [
+const PROJECTS = [
   {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-    caption: '3D Env — Urban Alley'
+    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/8793c6e3b_1.png',
+    caption: 'Cyberpunk Alley',
+    gallery: [
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/8793c6e3b_1.png', caption: 'Cyberpunk Alley' },
+    ],
   },
   {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-    caption: '3D Env — Tech Interior'
+    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/0676b3926_1.jpg',
+    caption: 'Night Market',
+    gallery: [
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/0676b3926_1.jpg', caption: 'Night Market' },
+    ],
   },
   {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=800&q=80',
-    caption: '3D Env — City Night'
+    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cab7efd68_1.jpg',
+    caption: 'Retro Desk',
+    gallery: [
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cab7efd68_1.jpg', caption: 'Retro Desk' },
+    ],
   },
   {
-    type: 'video',
-    src: 'YOUR_VIDEO_URL_HERE',
-    poster: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80',
-    caption: 'Fly-Through — Environment'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?w=800&q=80',
-    caption: '3D Env — Underground'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
-    caption: '3D Env — Industrial Zone'
-  },
-  {
-    type: 'video',
-    src: 'YOUR_VIDEO_URL_2_HERE',
-    poster: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    caption: 'Turntable — Asset Showcase'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=800&q=80',
-    caption: '3D Env — Space Station'
+    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/552c6df27_1.jpg',
+    caption: 'Treasure Chest',
+    gallery: [
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/552c6df27_1.jpg', caption: 'Treasure Chest' },
+    ],
   },
 ];
 
 export default function ThreeDEnvironmentArt() {
+  const [activeGallery, setActiveGallery] = useState(null);
+
+  const openGallery = (projectIndex, imageIndex = 0) => {
+    setActiveGallery({ items: PROJECTS[projectIndex].gallery, startIndex: imageIndex });
+  };
+
   return (
-    <PageLayout bgImage={BG_IMAGE}>
+    <PageLayout>
       <div className="mb-16 text-center">
         <p className="text-xs tracking-widest uppercase opacity-40 mb-3">3D Portfolio</p>
         <h1 className="uppercase" style={{ fontFamily: 'Montserrat', fontSize: '2rem', fontWeight: 300, letterSpacing: '0.25em' }}>
@@ -58,7 +49,39 @@ export default function ThreeDEnvironmentArt() {
         </h1>
         <div className="w-12 h-px bg-white opacity-20 mx-auto mt-6" />
       </div>
-      <PortfolioGrid items={ITEMS} />
+
+      {/* Editorial grid */}
+      <div className="flex flex-col gap-1">
+
+        {/* Row 1: two equal large */}
+        <div className="flex gap-1">
+          {[0, 1].map((idx) => (
+            <div key={idx} className="portfolio-item cursor-none w-1/2" onClick={() => openGallery(idx)}>
+              <img src={PROJECTS[idx].thumbnail} alt={PROJECTS[idx].caption} className="w-full object-cover" style={{ height: '420px' }} />
+              <div className="portfolio-caption"><p className="text-white text-xs tracking-widest uppercase opacity-80">{PROJECTS[idx].caption}</p></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Row 2: two equal large */}
+        <div className="flex gap-1">
+          {[2, 3].map((idx) => (
+            <div key={idx} className="portfolio-item cursor-none w-1/2" onClick={() => openGallery(idx)}>
+              <img src={PROJECTS[idx].thumbnail} alt={PROJECTS[idx].caption} className="w-full object-cover" style={{ height: '420px' }} />
+              <div className="portfolio-caption"><p className="text-white text-xs tracking-widest uppercase opacity-80">{PROJECTS[idx].caption}</p></div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      {activeGallery !== null && (
+        <Lightbox
+          items={activeGallery.items}
+          startIndex={activeGallery.startIndex}
+          onClose={() => setActiveGallery(null)}
+        />
+      )}
     </PageLayout>
   );
 }
