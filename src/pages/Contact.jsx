@@ -20,7 +20,7 @@ export default function Contact() {
     setError('');
     try {
       await base44.integrations.Core.SendEmail({
-        to: 'sanashaikh.art@gmail.com',
+        to: 'sanashaikh703@gmail.com',
         subject: `Portfolio enquiry from ${form.name}`,
         body: `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`,
       });
