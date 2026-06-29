@@ -32,7 +32,7 @@ export default function Home() {
       <Navbar />
 
       {/* Bottom buttons */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-end gap-1">
+      <div className="absolute z-20 flex items-end gap-1" style={{ bottom: '18%', left: '50%', transform: 'translateX(-50%)' }}>
         {buttons.map((btn) => (
           <button
             key={btn.path}

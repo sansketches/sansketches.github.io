@@ -32,11 +32,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-4"
-      style={{ background: 'rgba(5,5,5,0.72)', backdropFilter: 'blur(0px)' }}
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-16 py-5"
+      style={{ background: 'rgba(5,5,5,0.72)', backdropFilter: 'blur(0px)', fontSize: '13px', letterSpacing: '0.3em' }}
     >
       {/* Left nav group */}
-      <div className="flex items-center gap-14">
+      <div className="flex items-center gap-20">
         {/* Portfolio dropdown */}
         <div
           className="relative"
@@ -73,11 +73,11 @@ export default function Navbar() {
 
       {/* Center logo */}
       <Link to="/" className="absolute left-1/2 -translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity cursor-none">
-        <img src={LOGO_IMG} alt="Logo" className="h-10 w-auto" style={{ filter: 'invert(1) brightness(2)' }} />
+        <img src={LOGO_IMG} alt="Logo" className="h-14 w-auto" style={{ filter: 'invert(1) brightness(10)' }} />
       </Link>
 
       {/* Right nav group */}
-      <div className="flex items-center gap-14">
+      <div className="flex items-center gap-20">
         <Link to="/about" className={navLinkClass('/about')}>About</Link>
         <Link to="/contact" className={navLinkClass('/contact')}>Contact</Link>
       </div>
