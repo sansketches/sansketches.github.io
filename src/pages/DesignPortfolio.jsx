@@ -47,7 +47,6 @@ export default function DesignPortfolio() {
 
   const openLightbox = () => setLightboxIndex(0);
   const closeLightbox = () => setLightboxIndex(null);
-
   const prev = () => setLightboxIndex((i) => (i - 1 + IMAGES.length) % IMAGES.length);
   const next = () => setLightboxIndex((i) => (i + 1) % IMAGES.length);
 
@@ -70,22 +69,24 @@ export default function DesignPortfolio() {
         <div className="mt-4 w-12 h-px" style={{ background: 'rgba(140, 94, 94, 0.6)' }} />
       </div>
 
-      {/* Thumbnail — only image 1 */}
-      <div
-        className="portfolio-item cursor-none"
-        style={{ maxWidth: '480px' }}
-        onClick={openLightbox}
-      >
-        <img
-          src={IMAGES[0]}
-          alt="Design Portfolio"
-          className="w-full object-cover"
-          style={{ display: 'block' }}
-        />
-        <div className="portfolio-caption">
-          <p style={{ fontFamily: 'Montserrat', fontSize: '10px', letterSpacing: '0.2em', opacity: 0.8 }}>
-            CLICK TO VIEW
-          </p>
+      {/* Thumbnail — centered */}
+      <div className="flex justify-center">
+        <div
+          className="portfolio-item cursor-none"
+          style={{ maxWidth: '480px', width: '100%' }}
+          onClick={openLightbox}
+        >
+          <img
+            src={IMAGES[0]}
+            alt="Design Portfolio"
+            className="w-full object-cover"
+            style={{ display: 'block' }}
+          />
+          <div className="portfolio-caption">
+            <p style={{ fontFamily: 'Montserrat', fontSize: '10px', letterSpacing: '0.2em', opacity: 0.8 }}>
+              CLICK TO VIEW
+            </p>
+          </div>
         </div>
       </div>
 
@@ -99,7 +100,6 @@ export default function DesignPortfolio() {
           tabIndex={0}
           autoFocus
         >
-          {/* Close */}
           <button
             className="absolute top-6 right-8 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
             onClick={closeLightbox}
@@ -107,7 +107,6 @@ export default function DesignPortfolio() {
             <X size={24} />
           </button>
 
-          {/* Counter */}
           <div
             className="absolute top-6 left-1/2 -translate-x-1/2 text-white"
             style={{ fontFamily: 'Montserrat', fontSize: '11px', letterSpacing: '0.2em', opacity: 0.5 }}
@@ -115,7 +114,6 @@ export default function DesignPortfolio() {
             {lightboxIndex + 1} / {IMAGES.length}
           </div>
 
-          {/* Prev */}
           <button
             className="absolute left-6 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
             onClick={(e) => { e.stopPropagation(); prev(); }}
@@ -123,7 +121,6 @@ export default function DesignPortfolio() {
             <ChevronLeft size={40} />
           </button>
 
-          {/* Image */}
           <div
             className="lightbox-img-transition"
             style={{ maxHeight: '88vh', maxWidth: '88vw' }}
@@ -136,7 +133,6 @@ export default function DesignPortfolio() {
             />
           </div>
 
-          {/* Next */}
           <button
             className="absolute right-6 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
             onClick={(e) => { e.stopPropagation(); next(); }}
