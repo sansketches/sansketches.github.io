@@ -5,6 +5,7 @@ import { Play } from 'lucide-react';
 const BG_IMAGE = null;
 
 const VIDEO_SRC = 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/fd092c120_DemoReel_SanaS.mp4';
+const VIDEO_POSTER = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/83aca49dc_Thumbnail2.jpg';
 
 export default function Demoreel() {
   const [playing, setPlaying] = useState(false);
@@ -55,24 +56,12 @@ export default function Demoreel() {
           )}
 
           {!playing ? (
-            <div className="relative w-full h-full bg-black" onClick={handlePlay}>
-              {/* Title overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                <h1
-                  className="text-5xl md:text-7xl font-bold tracking-wide text-white uppercase"
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '8px',
-                    letterSpacing: '0.05em',
-                  }}
-                >
-                  Demo Reel 2025
-                </h1>
-                <p className="mt-4 text-sm tracking-widest uppercase text-white opacity-60">
-                  3D Environment Art
-                </p>
-              </div>
+            <div className="relative w-full h-full" onClick={handlePlay}>
+              <img
+                src={VIDEO_POSTER}
+                alt="Demo Reel 2025"
+                className="w-full h-full object-cover"
+              />
             </div>
           ) : (
             <video
