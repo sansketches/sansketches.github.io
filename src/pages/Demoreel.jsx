@@ -2,10 +2,9 @@ import { useState, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Play } from 'lucide-react';
 
-const BG_IMAGE = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/83aca49dc_Thumbnail2.jpg';
+const BG_IMAGE = null;
 
 const VIDEO_SRC = 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/fd092c120_DemoReel_SanaS.mp4';
-const VIDEO_POSTER = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/83aca49dc_Thumbnail2.jpg';
 
 export default function Demoreel() {
   const [playing, setPlaying] = useState(false);
@@ -56,13 +55,7 @@ export default function Demoreel() {
           )}
 
           {!playing ? (
-            <div className="relative w-full h-full" onClick={handlePlay}>
-              <img
-                src={VIDEO_POSTER}
-                alt="Demo Reel 2025"
-                className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.55)' }}
-              />
+            <div className="relative w-full h-full bg-black" onClick={handlePlay}>
               {/* Title overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                 <h1
