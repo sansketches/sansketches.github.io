@@ -62,6 +62,15 @@ export default function Demoreel() {
                 alt="Demo Reel 2025"
                 className="w-full h-full object-cover"
               />
+              {/* Centered play button overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div
+                  className="w-20 h-20 rounded-full border border-white/60 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  style={{ background: 'rgba(0,0,0,0.35)', backdropFilter: 'blur(4px)' }}
+                >
+                  <Play size={28} className="text-white ml-1" />
+                </div>
+              </div>
             </div>
           ) : (
             <video
