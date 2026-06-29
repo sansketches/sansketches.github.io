@@ -79,8 +79,8 @@ export default function DesignPortfolio() {
           <img
             src={IMAGES[0]}
             alt="Design Portfolio"
-            className="w-full object-cover"
-            style={{ display: 'block' }}
+            className="w-full"
+            style={{ display: 'block', imageRendering: 'auto' }}
           />
           <div className="portfolio-caption">
             <p style={{ fontFamily: 'Montserrat', fontSize: '10px', letterSpacing: '0.2em', opacity: 0.8 }}>
