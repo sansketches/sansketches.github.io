@@ -12,7 +12,7 @@ export default function PageLayout({ children, bgImage }) {
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'brightness(0.15) saturate(0.3)',
+            filter: 'none',
           }}
         />
       )}
