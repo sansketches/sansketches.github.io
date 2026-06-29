@@ -1,19 +1,35 @@
 import { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
+import { base44 } from '@/api/base44Client';
 
 const BG_IMAGE = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError('');
+    try {
+      await base44.integrations.Core.SendEmail({
+        to: 'sanashaikh.art@gmail.com',
+        subject: `Portfolio enquiry from ${form.name}`,
+        body: `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -70,8 +86,13 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <p className="text-center text-xs tracking-widest opacity-60" style={{ color: '#8C5E5E' }}>{error}</p>
+              )}
+
               <button
                 type="submit"
+                disabled={sending}
                 className="w-full py-4 text-xs tracking-widest uppercase transition-all duration-300 cursor-none"
                 style={{
                   border: '1px solid rgba(140,94,94,0.5)',
@@ -90,7 +111,7 @@ export default function Contact() {
                   e.currentTarget.style.letterSpacing = '0.25em';
                 }}
               >
-                Send Message
+                {sending ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           )}
