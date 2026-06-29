@@ -18,7 +18,11 @@ const PROJECTS = [
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/0676b3926_1.jpg',
     caption: 'Night Market',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/0676b3926_1.jpg', caption: 'Night Market' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/0676b3926_1.jpg', caption: 'Night Market — Final Render' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/597f2d5d2_2.mp4', caption: 'Night Market — Presentation' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/29384d61a_3.mp4', caption: 'Night Market — Process' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/4dae05811_4.jpg', caption: 'Night Market — Concept Sheets' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/80363a37b_5.jpg', caption: 'Night Market — Idea Exploration' },
     ],
   },
   {
