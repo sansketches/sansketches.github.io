@@ -26,7 +26,10 @@ const PROJECTS = [
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg',
     caption: 'Sky Market',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg', caption: 'Sky Market — Concept I' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg', caption: 'Rug Shop — Final Render' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3a20e993a_2.jpg', caption: 'Rug Shop — Presentation' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3ed92f4e8_3.png', caption: 'Rug Shop — Color Studies' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ccd89f6bb_4.jpg', caption: 'Rug Shop — Concept Sheets' },
     ],
   },
 ];
