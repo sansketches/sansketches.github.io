@@ -21,7 +21,7 @@ export default function Home() {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${HERO_IMAGE})`,
-          backgroundSize: 'cover',
+          backgroundSize: '100% 100%',
           backgroundPosition: 'center',
         }}
       />
