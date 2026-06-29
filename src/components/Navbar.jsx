@@ -34,7 +34,7 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 grid items-end py-7"
       style={{
-        background: 'rgba(5,5,5,0.72)',
+        background: 'rgba(30,30,30,0.82)',
         gridTemplateColumns: '1fr auto 1fr',
         fontSize: '13px',
         letterSpacing: '0.3em',

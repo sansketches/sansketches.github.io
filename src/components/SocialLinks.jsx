@@ -6,7 +6,7 @@ export default function SocialLinks() {
         href="https://linkedin.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-50 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
         aria-label="LinkedIn"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
@@ -19,7 +19,7 @@ export default function SocialLinks() {
         href="https://artstation.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-50 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
         aria-label="ArtStation"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
@@ -32,7 +32,7 @@ export default function SocialLinks() {
         href="https://behance.net"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-50 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
         aria-label="Behance"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
@@ -45,7 +45,7 @@ export default function SocialLinks() {
         href="https://youtube.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-50 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
         aria-label="YouTube"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
