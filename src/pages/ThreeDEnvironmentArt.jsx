@@ -29,7 +29,14 @@ const PROJECTS = [
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cab7efd68_1.jpg',
     caption: 'Retro Desk',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cab7efd68_1.jpg', caption: 'Retro Desk' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cab7efd68_1.jpg', caption: 'Retro Desk — Final Render' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/0a19feeac_2.mp4', caption: 'Retro Desk — Turntable' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/2f7540e60_3.mp4', caption: 'Retro Desk — Process' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/46a3ae9ab_4.jpg', caption: 'Retro Desk — Angle 01' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/d530bd42b_5.jpg', caption: 'Retro Desk — Angle 02' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3c753ec1b_6.jpg', caption: 'Retro Desk — Detail Shot' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cc99ac95e_7.jpg', caption: 'Retro Desk — Angle 03' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/dc2378ed2_8.jpg', caption: 'Retro Desk — Angle 04' },
     ],
   },
   {
