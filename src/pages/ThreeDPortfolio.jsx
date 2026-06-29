@@ -1,53 +1,120 @@
+import { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
-import PortfolioGrid from '@/components/PortfolioGrid';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
-const BG_IMAGE = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&q=80';
-
-const ITEMS = [
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-    caption: '3D Environment — Alley'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=800&q=80',
-    caption: '3D Environment — City'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    caption: '3D — Night Scene'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
-    caption: '3D — Industrial'
-  },
-  {
-    type: 'video',
-    src: 'YOUR_VIDEO_URL_HERE',
-    poster: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80',
-    caption: 'Demo Clip — Environment'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=800&q=80',
-    caption: '3D — Space Environment'
-  },
+const IMAGES = [
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/be0ceb5f5_1.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3f2e8140a_2.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/b8232241d_3.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ca8cabf41_4.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/b24d8eaf6_5.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/d27276f9d_6.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/964c342d1_7.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/8d324e36e_8.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/015156511_9.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/7a5f95e0f_10.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/0468cfc73_11.png',
 ];
 
 export default function ThreeDPortfolio() {
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const openLightbox = () => setLightboxIndex(0);
+  const closeLightbox = () => setLightboxIndex(null);
+  const prev = () => setLightboxIndex((i) => (i - 1 + IMAGES.length) % IMAGES.length);
+  const next = () => setLightboxIndex((i) => (i + 1) % IMAGES.length);
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'Escape') closeLightbox();
+  };
+
   return (
-    <PageLayout bgImage={BG_IMAGE}>
-      <div className="mb-16 text-center">
-        <p className="text-xs tracking-widest uppercase opacity-40 mb-3">Portfolio</p>
-        <h1 className="text-5xl font-light" style={{ fontFamily: 'Cormorant Garamond, serif', letterSpacing: '0.05em' }}>
+    <PageLayout>
+      {/* Header */}
+      <div className="mb-12">
+        <p style={{ fontFamily: 'Montserrat', fontSize: '11px', letterSpacing: '0.3em', opacity: 0.5 }} className="uppercase mb-3">
+          Portfolio
+        </p>
+        <h1 style={{ fontFamily: 'Cormorant Garamond', fontSize: '3rem', fontWeight: 300, letterSpacing: '-0.02em' }}>
           3D Portfolio
         </h1>
-        <div className="w-12 h-px bg-white opacity-20 mx-auto mt-6" />
+        <div className="mt-4 w-12 h-px" style={{ background: 'rgba(140, 94, 94, 0.6)' }} />
       </div>
-      <PortfolioGrid items={ITEMS} />
+
+      {/* Thumbnail — centered */}
+      <div className="flex justify-center">
+        <div
+          className="portfolio-item cursor-none"
+          style={{ maxWidth: '480px', width: '100%' }}
+          onClick={openLightbox}
+        >
+          <img
+            src={IMAGES[0]}
+            alt="3D Portfolio"
+            className="w-full"
+            style={{ display: 'block' }}
+          />
+          <div className="portfolio-caption">
+            <p style={{ fontFamily: 'Montserrat', fontSize: '10px', letterSpacing: '0.2em', opacity: 0.8 }}>
+              CLICK TO VIEW
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center lightbox-enter"
+          style={{ background: 'rgba(5,5,5,0.96)' }}
+          onClick={closeLightbox}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          autoFocus
+        >
+          <button
+            className="absolute top-6 right-8 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
+            onClick={closeLightbox}
+          >
+            <X size={24} />
+          </button>
+
+          <div
+            className="absolute top-6 left-1/2 -translate-x-1/2 text-white"
+            style={{ fontFamily: 'Montserrat', fontSize: '11px', letterSpacing: '0.2em', opacity: 0.5 }}
+          >
+            {lightboxIndex + 1} / {IMAGES.length}
+          </div>
+
+          <button
+            className="absolute left-6 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          <div
+            className="lightbox-img-transition"
+            style={{ maxHeight: '88vh', maxWidth: '88vw' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={IMAGES[lightboxIndex]}
+              alt={`3D Portfolio page ${lightboxIndex + 1}`}
+              style={{ maxHeight: '88vh', maxWidth: '88vw', objectFit: 'contain', display: 'block' }}
+            />
+          </div>
+
+          <button
+            className="absolute right-6 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+          >
+            <ChevronRight size={40} />
+          </button>
+        </div>
+      )}
     </PageLayout>
   );
 }
