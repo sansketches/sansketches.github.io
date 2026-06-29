@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useState, useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import SocialLinks from '@/components/SocialLinks';
 
@@ -13,16 +14,31 @@ const buttons = [
 
 export default function Home() {
   const navigate = useNavigate();
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = useCallback((e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 14;
+    setOffset({ x, y });
+  }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden page-enter" style={{ background: '#050505' }}>
-      {/* Hero background */}
+    <div
+      className="relative w-full h-screen overflow-hidden page-enter"
+      style={{ background: '#050505' }}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Hero background with parallax */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute z-0"
         style={{
+          inset: '-3%',
           backgroundImage: `url(${HERO_IMAGE})`,
           backgroundSize: '100% 100%',
           backgroundPosition: 'center',
+          transform: `translate(${offset.x}px, ${offset.y}px)`,
+          transition: 'transform 0.12s ease-out',
+          willChange: 'transform',
         }}
       />
 
