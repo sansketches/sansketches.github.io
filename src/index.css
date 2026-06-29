@@ -188,6 +188,8 @@ nav {
 /* Homepage buttons */
 .home-btn {
   border: 1px solid rgba(242, 242, 242, 0.5);
+  outline: 1px solid rgba(242, 242, 242, 0.18);
+  outline-offset: 3px;
   background: rgba(5, 5, 5, 0.4);
   backdrop-filter: blur(4px);
   color: #F2F2F2;
@@ -196,6 +198,7 @@ nav {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 14px 24px;
+  border-radius: 4px;
   transition: border-color 0.3s, background 0.3s, letter-spacing 0.3s;
   cursor: none;
   text-align: center;
