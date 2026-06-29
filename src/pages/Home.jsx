@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import SocialLinks from '@/components/SocialLinks';
 import RoseMotifs from '@/components/RoseMotifs';
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80';
+const HERO_IMAGE = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/681add460_Homepagebackground.png';
 
 const buttons = [
   { label: ['Interior', 'Design'], path: '/portfolio/interior-design' },
@@ -31,7 +31,7 @@ export default function Home() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.75) 100%)',
+          background: 'radial-gradient(ellipse at center, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.55) 100%)',
         }}
       />
 

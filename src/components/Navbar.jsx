@@ -1,14 +1,7 @@
 import { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const LOGO_SVG = (
-  <svg viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto">
-    <rect x="8" y="2" width="24" height="3" fill="#F2F2F2" />
-    <rect x="8" y="8" width="16" height="3" fill="#F2F2F2" />
-    <rect x="8" y="14" width="24" height="3" fill="#F2F2F2" />
-    <rect x="8" y="20" width="10" height="3" fill="#F2F2F2" />
-  </svg>
-);
+const LOGO_IMG = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/f1058ff13_Logo.png';
 
 export default function Navbar() {
   const [portfolioOpen, setPortfolioOpen] = useState(false);
@@ -39,8 +32,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-5"
-      style={{ background: 'linear-gradient(to bottom, rgba(5,5,5,0.85) 0%, transparent 100%)', backdropFilter: 'blur(0px)' }}
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-4"
+      style={{ background: 'rgba(5,5,5,0.72)', backdropFilter: 'blur(0px)' }}
     >
       {/* Left nav group */}
       <div className="flex items-center gap-14">
@@ -80,7 +73,7 @@ export default function Navbar() {
 
       {/* Center logo */}
       <Link to="/" className="absolute left-1/2 -translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity cursor-none">
-        {LOGO_SVG}
+        <img src={LOGO_IMG} alt="Logo" className="h-10 w-auto" style={{ filter: 'invert(1) brightness(2)' }} />
       </Link>
 
       {/* Right nav group */}
