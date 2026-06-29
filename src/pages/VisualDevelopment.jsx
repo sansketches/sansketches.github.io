@@ -17,7 +17,9 @@ const PROJECTS = [
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/c91d57888_1.jpg',
     caption: 'Fantasy Town',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/c91d57888_1.jpg', caption: 'Fantasy Town — Environment Concept' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/c91d57888_1.jpg', caption: 'Marketplace — Final Render' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/f33aff1a6_2.jpg', caption: 'Marketplace — Presentation' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ee913a903_3.jpg', caption: 'Marketplace — Concept Sheets' },
     ],
   },
   {
