@@ -1,0 +1,103 @@
+import { useState, useRef } from 'react';
+import PageLayout from '@/components/PageLayout';
+import { Play } from 'lucide-react';
+
+const BG_IMAGE = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&q=80';
+
+// Replace with your actual video URL and poster
+const VIDEO_SRC = 'YOUR_DEMOREEL_VIDEO_URL_HERE';
+const VIDEO_POSTER = 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400&q=80';
+
+export default function Demoreel() {
+  const [playing, setPlaying] = useState(false);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(false);
+  const videoRef = useRef(null);
+  const containerRef = useRef(null);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    setTimeout(() => videoRef.current?.play(), 50);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  return (
+    <PageLayout bgImage={BG_IMAGE}>
+      <div className="flex flex-col items-center justify-center min-h-[80vh]">
+        <div
+          ref={containerRef}
+          className="relative w-full max-w-5xl cursor-none"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setShowCursor(true)}
+          onMouseLeave={() => setShowCursor(false)}
+          style={{ aspectRatio: '16/9' }}
+        >
+          {/* Custom cursor inside video */}
+          {showCursor && !playing && (
+            <div
+              className="absolute z-20 pointer-events-none"
+              style={{
+                left: cursorPos.x,
+                top: cursorPos.y,
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <div
+                className="w-20 h-20 rounded-full border border-white/50 flex items-center justify-center"
+                style={{ background: 'rgba(242,242,242,0.05)' }}
+              >
+                <Play size={20} className="text-white ml-1" />
+              </div>
+            </div>
+          )}
+
+          {!playing ? (
+            <div className="relative w-full h-full" onClick={handlePlay}>
+              <img
+                src={VIDEO_POSTER}
+                alt="Demo Reel 2025"
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.55)' }}
+              />
+              {/* Title overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <h1
+                  className="text-5xl md:text-7xl font-bold tracking-wide text-white uppercase"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '8px',
+                    letterSpacing: '0.05em',
+                  }}
+                >
+                  Demo Reel 2025
+                </h1>
+                <p className="mt-4 text-sm tracking-widest uppercase text-white opacity-60">
+                  3D Environment Art
+                </p>
+              </div>
+            </div>
+          ) : (
+            <video
+              ref={videoRef}
+              src={VIDEO_SRC}
+              poster={VIDEO_POSTER}
+              controls
+              className="w-full h-full object-cover"
+              onEnded={() => setPlaying(false)}
+            />
+          )}
+        </div>
+
+        <p className="mt-8 text-xs tracking-widest uppercase opacity-30">
+          Games &amp; Animation
+        </p>
+      </div>
+    </PageLayout>
+  );
+}
