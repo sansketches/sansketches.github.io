@@ -2,11 +2,10 @@ import { useState, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Play } from 'lucide-react';
 
-const BG_IMAGE = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&q=80';
+const BG_IMAGE = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/83aca49dc_Thumbnail2.jpg';
 
-// Replace with your actual video URL and poster
-const VIDEO_SRC = 'YOUR_DEMOREEL_VIDEO_URL_HERE';
-const VIDEO_POSTER = 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400&q=80';
+const VIDEO_SRC = 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/fd092c120_DemoReel_SanaS.mp4';
+const VIDEO_POSTER = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/83aca49dc_Thumbnail2.jpg';
 
 export default function Demoreel() {
   const [playing, setPlaying] = useState(false);
