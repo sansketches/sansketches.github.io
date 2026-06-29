@@ -85,7 +85,7 @@ export default function Demoreel() {
             <video
               ref={videoRef}
               src={VIDEO_SRC}
-              poster={VIDEO_POSTER}
+
               controls
               className="w-full h-full object-cover"
               onEnded={() => setPlaying(false)}
