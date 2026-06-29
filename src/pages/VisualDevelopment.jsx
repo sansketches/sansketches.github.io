@@ -5,12 +5,13 @@ import Lightbox from '@/components/Lightbox';
 // Each project has a thumbnail and its own gallery of images/videos
 const PROJECTS = [
   {
-    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/95c298f6d_1.jpg',
-    caption: 'Air Ship',
+    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg',
+    caption: 'Sky Market',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/95c298f6d_1.jpg', caption: 'Air Ship — Final Render' },
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/02ebb49b7_2.jpg', caption: 'Air Ship — Presentation' },
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/5afad1d4f_3.jpg', caption: 'Air Ship — Concept Sheets' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg', caption: 'Rug Shop — Final Render' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3a20e993a_2.jpg', caption: 'Rug Shop — Presentation' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3ed92f4e8_3.png', caption: 'Rug Shop — Color Studies' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ccd89f6bb_4.jpg', caption: 'Rug Shop — Concept Sheets' },
     ],
   },
   {
@@ -23,13 +24,12 @@ const PROJECTS = [
     ],
   },
   {
-    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg',
-    caption: 'Sky Market',
+    thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/95c298f6d_1.jpg',
+    caption: 'Air Ship',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/97704b3e8_1.jpg', caption: 'Rug Shop — Final Render' },
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3a20e993a_2.jpg', caption: 'Rug Shop — Presentation' },
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/3ed92f4e8_3.png', caption: 'Rug Shop — Color Studies' },
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ccd89f6bb_4.jpg', caption: 'Rug Shop — Concept Sheets' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/95c298f6d_1.jpg', caption: 'Air Ship — Final Render' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/02ebb49b7_2.jpg', caption: 'Air Ship — Presentation' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/5afad1d4f_3.jpg', caption: 'Air Ship — Concept Sheets' },
     ],
   },
 ];
