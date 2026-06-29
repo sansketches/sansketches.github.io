@@ -43,7 +43,10 @@ const PROJECTS = [
     thumbnail: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/552c6df27_1.jpg',
     caption: 'Treasure Chest',
     gallery: [
-      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/552c6df27_1.jpg', caption: 'Treasure Chest' },
+      { type: 'image', src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/552c6df27_1.jpg', caption: 'Treasure Chest — Final Render' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/244a1327e_2.mp4', caption: 'Treasure Chest — Turntable' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/cce33e4a3_3.mp4', caption: 'Treasure Chest — Process' },
+      { type: 'video', src: 'https://media.base44.com/videos/public/6a41fd8388fb92dbaee663e8/6d3c0a9ac_4.mp4', caption: 'Treasure Chest — Detail' },
     ],
   },
 ];
