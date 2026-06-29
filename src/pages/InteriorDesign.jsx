@@ -6,38 +6,38 @@ const BG_IMAGE = 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w
 const ITEMS = [
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80',
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/a9fea95d7_1.jpg',
     caption: 'Office Suite — Project I'
   },
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
-    caption: 'Living Space — Project II'
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/94aa007c0_2.jpg',
+    caption: 'Executive Office — Project II'
   },
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-    caption: 'Residence — Project III'
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/542587046_3.jpg',
+    caption: 'Bedroom — Project III'
   },
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&q=80',
-    caption: 'Dining — Project IV'
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/79e8515cd_4.jpg',
+    caption: 'Private Office — Project IV'
   },
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80',
-    caption: 'Bedroom — Project V'
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/930ca0017_5.jpg',
+    caption: 'Director\'s Office — Project V'
   },
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80',
-    caption: 'Lounge — Project VI'
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/7418bd1f4_6.jpg',
+    caption: 'Dining Room — Project VI'
   },
   {
     type: 'image',
-    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-    caption: 'Entry Hall — Project VII'
+    src: 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/296925d9b_7.jpg',
+    caption: 'Living Space — Project VII'
   },
 ];
 
