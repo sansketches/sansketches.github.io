@@ -1,152 +1,149 @@
 import { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
-import Lightbox from '@/components/Lightbox';
-import { ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
-const BG_IMAGE = 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80';
-
-// Design Portfolio = Interior Design + Arch Viz slides
-// First slide is a cover card; subsequent slides are images
-const SLIDES = [
-  { type: 'cover' }, // The white cover card
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1400&q=80',
-    caption: 'Interior Design — Project I'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=80',
-    caption: 'Interior Design — Project II'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80',
-    caption: 'Arch Viz — Project I'
-  },
+const IMAGES = [
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/5b9db4e1f_1.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/a71ac6528_2.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/1d1ada148_3.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/9ecde0f97_4.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/80c49a62f_5.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/4b12b9aeb_6.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/deabd4009_7.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/4b258db51_8.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/54a226b4a_9.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/18ace64fa_10.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ef9cf867a_11.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/19bfd690d_12.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/405980989_13.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/d8dd54f14_14.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/a9ccc8f30_15.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/2f2fa5e7e_16.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/672e92030_17.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/d6d080b8a_18.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/cb48c33dc_19.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/2727914bc_20.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/9bfa1f20a_21.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/602a4ca09_22.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ce595da34_23.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ea4df85a7_24.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/33160028a_25.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/00cc191dc_26.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/089859cc9_27.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/28a3fb1bd_28.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/a09344996_29.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/6fd4234e4_30.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/1e6af8d92_31.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/a44b3cdf3_32.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/fd64527ec_33.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/35d4453c7_34.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/776fbb54b_35.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/2d84e85e4_36.png',
+  'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/ae2c011e5_37.png',
 ];
 
-// Lightbox items (exclude the cover card)
-const LIGHTBOX_ITEMS = SLIDES.filter(s => s.type === 'image');
-
 export default function DesignPortfolio() {
-  const [coverIndex, setCoverIndex] = useState(0);
-  const [lightboxStart, setLightboxStart] = useState(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const currentSlide = SLIDES[coverIndex];
-  const isLast = coverIndex >= SLIDES.length - 1;
+  const openLightbox = () => setLightboxIndex(0);
+  const closeLightbox = () => setLightboxIndex(null);
 
-  const handleArrow = () => {
-    if (isLast) {
-      // Open lightbox at last image
-      setLightboxStart(LIGHTBOX_ITEMS.length - 1);
-    } else {
-      const next = coverIndex + 1;
-      setCoverIndex(next);
-      if (SLIDES[next]?.type === 'image') {
-        const imgIdx = SLIDES.slice(1, next + 1).filter(s => s.type === 'image').length - 1;
-        setLightboxStart(imgIdx);
-      }
-    }
-  };
+  const prev = () => setLightboxIndex((i) => (i - 1 + IMAGES.length) % IMAGES.length);
+  const next = () => setLightboxIndex((i) => (i + 1) % IMAGES.length);
 
-  const handleImageClick = () => {
-    if (currentSlide.type === 'image') {
-      const imgIdx = SLIDES.slice(1, coverIndex + 1).filter(s => s.type === 'image').length - 1;
-      setLightboxStart(imgIdx);
-    }
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'Escape') closeLightbox();
   };
 
   return (
-    <PageLayout bgImage={BG_IMAGE}>
-      <div className="flex flex-col items-center justify-center min-h-[80vh] relative">
-        {/* Slide display */}
-        <div className="relative flex items-center justify-center w-full">
-          {currentSlide.type === 'cover' ? (
-            <div
-              className="relative"
-              style={{
-                background: '#FAFAFA',
-                width: '320px',
-                minHeight: '480px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '60px 40px',
-                boxShadow: '0 20px 80px rgba(0,0,0,0.8)',
-              }}
-            >
-              <div style={{ textAlign: 'center' }}>
-                <p style={{
-                  fontFamily: 'Cormorant Garamond, serif',
-                  fontSize: '28px',
-                  letterSpacing: '0.4em',
-                  color: '#222',
-                  textTransform: 'uppercase',
-                  fontWeight: 300,
-                  marginBottom: '12px',
-                }}>
-                  Portfolio
-                </p>
-                <p style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '11px',
-                  letterSpacing: '0.3em',
-                  color: '#555',
-                  textTransform: 'uppercase',
-                }}>
-                  Interior Design
-                </p>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <p style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '10px',
-                  letterSpacing: '0.25em',
-                  color: '#555',
-                  textTransform: 'uppercase',
-                  marginBottom: '6px',
-                }}>
-                  Sana Shaikh
-                </p>
-                <p style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '10px',
-                  letterSpacing: '0.25em',
-                  color: '#888',
-                }}>
-                  2025
-                </p>
-              </div>
-            </div>
-          ) : (
-            <img
-              src={currentSlide.src}
-              alt={currentSlide.caption}
-              className="max-h-[70vh] max-w-3xl w-full object-contain cursor-none"
-              style={{ boxShadow: '0 20px 80px rgba(0,0,0,0.8)' }}
-              onClick={handleImageClick}
-            />
-          )}
+    <PageLayout>
+      {/* Header */}
+      <div className="mb-12">
+        <p style={{ fontFamily: 'Montserrat', fontSize: '11px', letterSpacing: '0.3em', opacity: 0.5 }} className="uppercase mb-3">
+          Portfolio
+        </p>
+        <h1 style={{ fontFamily: 'Cormorant Garamond', fontSize: '3rem', fontWeight: 300, letterSpacing: '-0.02em' }}>
+          Design Portfolio
+        </h1>
+        <div className="mt-4 w-12 h-px" style={{ background: 'rgba(140, 94, 94, 0.6)' }} />
+      </div>
 
-          {/* Right arrow */}
-          <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-white opacity-40 hover:opacity-100 transition-opacity cursor-none p-4 translate-x-8"
-            onClick={handleArrow}
-            aria-label="Next"
-          >
-            <ChevronRight size={28} />
-          </button>
+      {/* Thumbnail — only image 1 */}
+      <div
+        className="portfolio-item cursor-none"
+        style={{ maxWidth: '480px' }}
+        onClick={openLightbox}
+      >
+        <img
+          src={IMAGES[0]}
+          alt="Design Portfolio"
+          className="w-full object-cover"
+          style={{ display: 'block' }}
+        />
+        <div className="portfolio-caption">
+          <p style={{ fontFamily: 'Montserrat', fontSize: '10px', letterSpacing: '0.2em', opacity: 0.8 }}>
+            CLICK TO VIEW
+          </p>
         </div>
       </div>
 
-      {lightboxStart !== null && (
-        <Lightbox
-          items={LIGHTBOX_ITEMS}
-          startIndex={lightboxStart}
-          onClose={() => setLightboxStart(null)}
-        />
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center lightbox-enter"
+          style={{ background: 'rgba(5,5,5,0.96)' }}
+          onClick={closeLightbox}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          autoFocus
+        >
+          {/* Close */}
+          <button
+            className="absolute top-6 right-8 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
+            onClick={closeLightbox}
+          >
+            <X size={24} />
+          </button>
+
+          {/* Counter */}
+          <div
+            className="absolute top-6 left-1/2 -translate-x-1/2 text-white"
+            style={{ fontFamily: 'Montserrat', fontSize: '11px', letterSpacing: '0.2em', opacity: 0.5 }}
+          >
+            {lightboxIndex + 1} / {IMAGES.length}
+          </div>
+
+          {/* Prev */}
+          <button
+            className="absolute left-6 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          {/* Image */}
+          <div
+            className="lightbox-img-transition"
+            style={{ maxHeight: '88vh', maxWidth: '88vw' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={IMAGES[lightboxIndex]}
+              alt={`Portfolio page ${lightboxIndex + 1}`}
+              style={{ maxHeight: '88vh', maxWidth: '88vw', objectFit: 'contain', display: 'block' }}
+            />
+          </div>
+
+          {/* Next */}
+          <button
+            className="absolute right-6 text-white opacity-60 hover:opacity-100 transition-opacity cursor-none z-10"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+          >
+            <ChevronRight size={40} />
+          </button>
+        </div>
       )}
     </PageLayout>
   );
