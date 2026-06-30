@@ -18,7 +18,7 @@ export default function Home() {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = useCallback((e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 70;
+    const x = (e.clientX / window.innerWidth - 0.5) * 160;
     const y = (e.clientY / window.innerHeight - 0.5) * 50;
     setOffset({ x, y });
   }, []);
@@ -33,7 +33,7 @@ export default function Home() {
       <div
         className="absolute z-0"
         style={{
-          inset: '-3%',
+          inset: '-3% -12%',
           backgroundImage: `url(${BG_IMAGE})`,
           backgroundSize: '100% 100%',
           backgroundPosition: 'center',
