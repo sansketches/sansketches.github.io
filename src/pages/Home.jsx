@@ -18,8 +18,8 @@ export default function Home() {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = useCallback((e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 40;
-    const y = (e.clientY / window.innerHeight - 0.5) * 28;
+    const x = (e.clientX / window.innerWidth - 0.5) * 70;
+    const y = (e.clientY / window.innerHeight - 0.5) * 50;
     setOffset({ x, y });
   }, []);
 
