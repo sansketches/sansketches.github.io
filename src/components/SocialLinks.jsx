@@ -6,7 +6,7 @@ export default function SocialLinks() {
         href="https://www.linkedin.com/in/sana-shaikh-designand3dart/"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-all duration-200 hover:scale-125 cursor-none"
         aria-label="LinkedIn"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
@@ -19,7 +19,7 @@ export default function SocialLinks() {
         href="https://www.artstation.com/sana-s-designand3dart"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-all duration-200 hover:scale-125 cursor-none"
         aria-label="ArtStation"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
@@ -32,7 +32,7 @@ export default function SocialLinks() {
         href="https://www.behance.net/sanashk"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-all duration-200 hover:scale-125 cursor-none"
         aria-label="Behance"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
@@ -45,7 +45,7 @@ export default function SocialLinks() {
         href="https://www.youtube.com/watch?v=RdwfIFDuBUc"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-70 hover:opacity-100 transition-opacity cursor-none"
+        className="opacity-70 hover:opacity-100 transition-all duration-200 hover:scale-125 cursor-none"
         aria-label="YouTube"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">

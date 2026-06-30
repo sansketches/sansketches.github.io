@@ -48,7 +48,7 @@ export default function Navbar() {
           onMouseEnter={handlePortfolioEnter}
           onMouseLeave={handlePortfolioLeave}
         >
-          <button className="text-white hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none" style={{ opacity: 0.92 }}>
+          <button className="text-white hover:opacity-100 transition-all duration-200 hover:tracking-widest hover:scale-125 cursor-none" style={{ opacity: 0.92 }}>
             PORTFOLIO
           </button>
           {portfolioOpen && (
@@ -65,7 +65,7 @@ export default function Navbar() {
           onMouseEnter={handleDemoEnter}
           onMouseLeave={handleDemoLeave}
         >
-          <button className="text-white hover:opacity-100 transition-all duration-200 hover:tracking-widest cursor-none" style={{ opacity: 0.92 }}>
+          <button className="text-white hover:opacity-100 transition-all duration-200 hover:tracking-widest hover:scale-125 cursor-none" style={{ opacity: 0.92 }}>
             DEMOREEL
           </button>
           {demoOpen && (
@@ -83,8 +83,8 @@ export default function Navbar() {
 
       {/* Right nav group */}
       <div className="flex items-end justify-evenly px-8 pb-3">
-        <Link to="/about" className={`text-white transition-all duration-200 hover:tracking-widest hover:opacity-100 ${location.pathname === '/about' ? 'opacity-100' : ''}`} style={{ opacity: location.pathname === '/about' ? 1 : 0.92 }}>About</Link>
-        <Link to="/contact" className={`text-white transition-all duration-200 hover:tracking-widest hover:opacity-100 ${location.pathname === '/contact' ? 'opacity-100' : ''}`} style={{ opacity: location.pathname === '/contact' ? 1 : 0.92 }}>Contact</Link>
+        <Link to="/about" className={`text-white transition-all duration-200 hover:tracking-widest hover:opacity-100 hover:scale-125 ${location.pathname === '/about' ? 'opacity-100' : ''}`} style={{ opacity: location.pathname === '/about' ? 1 : 0.92 }}>About</Link>
+        <Link to="/contact" className={`text-white transition-all duration-200 hover:tracking-widest hover:opacity-100 hover:scale-125 ${location.pathname === '/contact' ? 'opacity-100' : ''}`} style={{ opacity: location.pathname === '/contact' ? 1 : 0.92 }}>Contact</Link>
       </div>
     </nav>
   );
