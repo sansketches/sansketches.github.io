@@ -77,7 +77,7 @@ export default function Navbar() {
       </div>
 
       {/* Center logo */}
-      <Link to="/" className="opacity-90 hover:opacity-100 transition-opacity cursor-none flex justify-center items-end pb-1">
+      <Link to="/" className="opacity-90 hover:opacity-100 transition-all duration-200 hover:scale-110 cursor-none flex justify-center items-end pb-1">
         <img src={LOGO_IMG} alt="Logo" className="h-14 w-auto" />
       </Link>
 
