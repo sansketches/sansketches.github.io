@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import SocialLinks from '@/components/SocialLinks';
 
 const BG_IMAGE = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/7c7f64703_Background.png';
-const FRAME_IMAGE = 'https://media.base44.com/images/public/6a41fd8388fb92dbaee663e8/bc0c897b6_Frame1.png';
+
 
 const buttons = [
   { label: ['Interior', 'Design'], path: '/portfolio/interior-design' },
@@ -43,16 +43,7 @@ export default function Home() {
         }}
       />
 
-      {/* Frame overlay — stays fixed, no parallax */}
-      <div
-        className="absolute inset-0 z-10"
-        style={{
-          backgroundImage: `url(${FRAME_IMAGE})`,
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-          pointerEvents: 'none',
-        }}
-      />
+
 
 
 
